@@ -1,0 +1,152 @@
+/*  Desktop 350 x 595
+    Mobile 330 x 545 
+-   Weights: 300, 400, 600 */
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+  --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --Font-size: 18px;
+}
+
+body {
+  background-color: var(--Very-dark-blue-main-BG);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--Very-dark-blue-card-BG);
+  padding: 25px;
+  width: min(90%, 330px);
+  font-family: "Outfit";
+  border-radius: 20px;
+  color: var(--Soft-blue);
+  font-weight: 300;
+}
+
+.image {
+  max-height: 303px;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 255, 247, 0%);
+  width: 100%;
+  height: calc(100% - 28px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.view img {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.view:hover {
+  background-color: rgba(0, 255, 247, 25%);
+  cursor: pointer;
+}
+
+.view:hover img {
+  opacity: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+p {
+  padding: 15px 0;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+p + div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+p + div div:first-child {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+p + div img {
+  margin-right: 7px;
+  transform: translateY(2.5px);
+}
+
+.creator {
+  padding-top: 15px;
+  border-top: 1px solid var(--Very-dark-blue-line);
+}
+
+.creator img {
+  width: 33px;
+  height: 33px;
+  border: 1px solid white;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.creator span {
+  color: white;
+  transition: 0.3s;
+}
+
+.creator span:hover,
+h1:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 350px;
+    height: 595px;
+  }
+  .image {
+    max-height: fit-content;
+  }
+  .container > *:not(h1) {
+    font-size: var(--Font-size);
+  }
+  p + div {
+    padding: 10px 0 25px;
+  }
+}
